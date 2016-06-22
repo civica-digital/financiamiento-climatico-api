@@ -16,7 +16,7 @@ gem 'haml'
 gem 'simple_form'
 gem 'devise'
 gem 'rails-i18n'
-
+gem 'devise-i18n'
 
 group :development, :test do
   gem 'byebug'
