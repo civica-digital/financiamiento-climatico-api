@@ -24,5 +24,17 @@ module FinanciamientoClimaticoApi
     config.active_record.raise_in_transactional_callbacks = true
     config.i18n.available_locales = ["es-MX", :es]
     config.i18n.default_locale = "es-MX"
+
+    config.generators do |gen|
+      gen.orm :active_record
+      gen.test_framework :rspec
+      gen.fixture_replacement :factory_girl, dir: 'spec/factories'
+      gen.view_specs = false
+      gen.controller_specs = false
+      gen.routing_specs = false
+      gen.helper = false
+      gen.stylesheets = false
+      gen.javascripts = false
+    end
   end
 end

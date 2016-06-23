@@ -22,10 +22,11 @@ gem 'neat'
 gem 'compass-rails'
 gem 'bitters'
 gem "administrate", "~> 0.2.2"
+gem 'web-console', '~> 2.0', group: :development
+
 
 group :development, :test do
   gem 'byebug'
-  gem 'web-console', '~> 2.0'
   gem 'rspec-rails'
   gem 'spring'
 end
