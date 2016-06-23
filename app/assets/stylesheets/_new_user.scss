@@ -3,6 +3,10 @@
   @include shift(4);
 
   margin-top: 80px;
+
+  .label-checkbox {
+    display: inline;
+  }
 }
 
 .devise-links {
