@@ -1,0 +1,11 @@
+.new_user {
+  @include span-columns(4);
+  @include shift(4);
+
+  margin-top: 80px;
+}
+
+.devise-links {
+  @include span-columns(4);
+  @include shift(4);
+}
