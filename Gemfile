@@ -12,7 +12,6 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'pg'
 gem 'haml'
-gem 'simple_form'
 gem 'devise'
 gem 'rails-i18n'
 gem 'devise-i18n'
