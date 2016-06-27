@@ -1,0 +1,37 @@
+es-MX:
+  administrate:
+    actions:
+      edit: "Editar"
+      destroy: "Eliminar"
+      confirm: "¿Estás seguro de eliminar este registro?"
+    application:
+      sidebar:
+        heading: "Panel Administrador"
+        organizations: "Organizaciones"
+        projects: "Proyectos"
+        signout: "Cerrar sesión"
+  system_admin:
+    messages:
+      unathorized_user: "Necesitas iniciar sesión como administrador."
+  admin:
+    organizations:
+      index:
+        organizations: "Organizaciones"
+        search_hint: "Presiona enter para buscar"
+        search: "Buscar"
+        new_organization: "Nueva organización"
+    projects:
+      index:
+        projects: "Proyectos"
+        search_hint: "Presiona enter para buscar"
+        search: "Buscar"
+        new_project: "Nuevo Proyecto"
+  helpers:
+    label:
+      organization:
+        name: "Nombre"
+        contact: "Contacto"
+      project:
+        name: "Nombre"
+        area: "Área"
+        year: "Año"
