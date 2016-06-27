@@ -13,6 +13,8 @@ es-MX:
   system_admin:
     messages:
       unathorized_user: "Necesitas iniciar sesión como administrador."
+      organization:
+        created: "La organización ha sido creada con éxito."
   admin:
     organizations:
       index:
@@ -20,6 +22,11 @@ es-MX:
         search_hint: "Presiona enter para buscar"
         search: "Buscar"
         new_organization: "Nueva organización"
+      new:
+        new_organization: "Nueva organización"
+        back: "Atrás"
+      form:
+        create_organization: "Crear Organización"
     projects:
       index:
         projects: "Proyectos"
@@ -30,7 +37,7 @@ es-MX:
     label:
       organization:
         name: "Nombre"
-        contact: "Contacto"
+        email: "Contacto"
       project:
         name: "Nombre"
         area: "Área"
