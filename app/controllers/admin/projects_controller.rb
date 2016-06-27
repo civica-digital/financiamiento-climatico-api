@@ -1,3 +1,4 @@
+require_relative "../../services/projects"
 module Admin
   class ProjectsController < Admin::ApplicationController
     # To customize the behavior of this controller,
@@ -15,5 +16,11 @@ module Admin
 
     # See https://administrate-docs.herokuapp.com/customizing_controller_actions
     # for more information
+    def new
+      @project = Projects.new_with_defaults(Project)
+      render locals: {
+        page: Administrate::Page::Form.new(dashboard, @project),
+      }
+    end
   end
 end

@@ -1,4 +1,5 @@
 require "administrate/base_dashboard"
+require_relative "../services/projects"
 
 class ProjectDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
@@ -9,16 +10,16 @@ class ProjectDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
-    area: Field::String,
-    year: Field::Number,
+    area: Field::Select.with_options(collection: Projects.area_options),
+    year: Field::Select.with_options(collection: Projects.year_options),
     name: Field::String,
     quantity: Field::String.with_options(searchable: false),
-    currency: Field::String,
-    financing: Field::String,
-    region: Field::String,
+    currency: Field::Select.with_options(collection: Projects.currency_options),
+    financing: Field::Select.with_options(collection: Projects.financing_options),
+    region: Field::Select.with_options(collection: Projects.region_options),
     grant: Field::String,
     source: Field::String,
-    status: Field::String,
+    status: Field::Select.with_options(collection: Projects.status_options),
     observations: Field::Text,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -59,6 +60,7 @@ class ProjectDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
+    :grant,
     :area,
     :year,
     :name,
@@ -66,7 +68,6 @@ class ProjectDashboard < Administrate::BaseDashboard
     :currency,
     :financing,
     :region,
-    :grant,
     :source,
     :status,
     :observations,
