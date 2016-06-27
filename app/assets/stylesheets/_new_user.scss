@@ -1,0 +1,15 @@
+.new_user {
+  @include span-columns(4);
+  @include shift(4);
+
+  margin-top: 80px;
+
+  .label-checkbox {
+    display: inline;
+  }
+}
+
+.devise-links {
+  @include span-columns(4);
+  @include shift(4);
+}

@@ -16,7 +16,12 @@ gem 'haml'
 gem 'simple_form'
 gem 'devise'
 gem 'rails-i18n'
-
+gem 'devise-i18n'
+gem 'bourbon'
+gem 'neat'
+gem 'compass-rails'
+gem 'bitters'
+gem "administrate", "~> 0.2.2"
 
 group :development, :test do
   gem 'byebug'
