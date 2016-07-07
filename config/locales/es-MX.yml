@@ -31,6 +31,12 @@ es-MX:
       new:
         new_organization: "Nueva organización"
         back: "Atrás"
+      edit:
+        edit_organization: "Editar organización #%{id}"
+        see_organization: "Ver organización"
+      show:
+        organization: "Organización #%{id}"
+        edit: "Editar"
       form:
         create_organization: "Crear Organización"
     projects:
