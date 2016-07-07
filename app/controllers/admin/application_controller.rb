@@ -1,11 +1,17 @@
 module Admin
   class ApplicationController < Administrate::ApplicationController
-    before_filter :authenticate_admin
+    before_action :authenticate_admin
 
     def authenticate_admin
-      unless current_user.present? && current_user.system_admin
+      unless current_user.present? && (current_user.system_admin || current_user.type == "Ally")
         redirect_to root_path, alert: I18n.t("system_admin.messages.unathorized_user")
+      else
+        set_permissions_for_user
       end
+    end
+
+    def set_permissions_for_user
+      @permissions ||= Permissions.for_user(current_user)
     end
 
     # Override this value to specify the number of elements to display at a time

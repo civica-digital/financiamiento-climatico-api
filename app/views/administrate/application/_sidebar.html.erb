@@ -12,11 +12,13 @@ as defined by the routes in the `admin/` namespace
 <ul class="sidebar__list">
   <% Administrate::Namespace.new(namespace).resources.each do |resource| %>
     <li>
-      <%= link_to(
-        t(".#{resource}"),
-        [namespace, resource],
-        class: "sidebar__link sidebar__link--#{nav_link_state(resource)}"
-      ) %>
+      <% if @permissions.send("can_manage_#{resource}?")%>
+        <%= link_to(
+          t(".#{resource}"),
+          [namespace, resource],
+          class: "sidebar__link sidebar__link--#{nav_link_state(resource)}"
+        ) %>
+      <% end %>
     </li>
   <% end %>
 </ul>
