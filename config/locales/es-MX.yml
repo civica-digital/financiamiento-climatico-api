@@ -48,6 +48,12 @@ es-MX:
       new:
         new_project: "Nuevo Proyecto"
         back: "Atrás"
+      edit:
+        edit_project: "Editar proyecto #%{id}"
+        see_project: "Ver proyecto"
+      show:
+        project: "Proyecto #%{id}"
+        edit: "Editar"
       form:
         create_project: "Crear Proyecto"
     allies:
