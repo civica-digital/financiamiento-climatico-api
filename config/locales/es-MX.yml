@@ -4,6 +4,9 @@ es-MX:
       edit: "Editar"
       destroy: "Eliminar"
       confirm: "¿Estás seguro de eliminar este registro?"
+    controller:
+      create:
+        success: "Registro creado con éxito."
     application:
       sidebar:
         heading: "Panel Administrador"
@@ -33,6 +36,11 @@ es-MX:
         search_hint: "Presiona enter para buscar"
         search: "Buscar"
         new_project: "Nuevo Proyecto"
+      new:
+        new_project: "Nuevo Proyecto"
+        back: "Atrás"
+      form:
+        create_project: "Crear Proyecto"
   helpers:
     label:
       organization:
@@ -42,3 +50,12 @@ es-MX:
         name: "Nombre"
         area: "Área"
         year: "Año"
+        grant: "Fondo"
+        quantity: "Cantidad"
+        currency: "Moneda"
+        financing: "Financiamiento"
+        region: "Región"
+        source: "Fuente"
+        status: "Estatus"
+        observations: "Observaciones"
+        organizations: "Beneficiarios"
