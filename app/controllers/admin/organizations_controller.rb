@@ -15,5 +15,23 @@ module Admin
 
     # See https://administrate-docs.herokuapp.com/customizing_controller_actions
     # for more information
+
+    def create
+      @organization = Organization.new(organization_params)
+      if @organization.save
+        redirect_to admin_organizations_path, notice: t("system_admin.messages.organization.created")
+      else
+        render :new, locals: {
+          page: Administrate::Page::Form.new(dashboard, @organization),
+        }
+      end
+    end
+
+    private
+
+    def organization_params
+      password = Devise.friendly_token.first(8)
+      params.require(:organization).permit(:name, :email).merge(password: password, password_confirmation: password)
+    end
   end
 end

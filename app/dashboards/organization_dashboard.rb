@@ -10,7 +10,7 @@ class OrganizationDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     name: Field::String,
-    contact: Field::String,
+    email: Field::String,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -21,7 +21,7 @@ class OrganizationDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :id,
     :name,
-    :contact,
+    :email,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -29,7 +29,7 @@ class OrganizationDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = [
     :id,
     :name,
-    :contact,
+    :email,
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -37,7 +37,7 @@ class OrganizationDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :name,
-    :contact,
+    :email,
   ].freeze
 
   # Overwrite this method to customize how organizations are displayed

@@ -6,7 +6,8 @@ Rails.application.routes.draw do
     root to: "organizations#index"
   end
 
-  devise_for :users
+  devise_for :users, skip: :registrations
+  devise_for :organizations, skip: :sessions
 
   devise_scope :user do
     root to: "devise/sessions#new"
