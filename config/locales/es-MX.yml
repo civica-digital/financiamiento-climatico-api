@@ -12,12 +12,15 @@ es-MX:
         heading: "Panel Administrador"
         organizations: "Organizaciones"
         projects: "Proyectos"
+        allies: "Aliados"
         signout: "Cerrar sesión"
   system_admin:
     messages:
       unathorized_user: "Necesitas iniciar sesión como administrador."
       organization:
         created: "La organización ha sido creada con éxito."
+      ally:
+        created: "El usuario Aliado ha sido creado con éxito."
   admin:
     organizations:
       index:
@@ -41,8 +44,22 @@ es-MX:
         back: "Atrás"
       form:
         create_project: "Crear Proyecto"
+    allies:
+      index:
+        allies: "Aliados"
+        search_hint: "Presiona enter para buscar"
+        search: "Buscar"
+        new_ally: "Nuevo Aliado"
+      new:
+        new_ally: "Nuevo Aliado"
+        back: "Atrás"
+      form:
+        create_ally: "Crear Aliado"
   helpers:
     label:
+      ally:
+        name: "Nombre"
+        email: "Contacto"
       organization:
         name: "Nombre"
         email: "Contacto"
