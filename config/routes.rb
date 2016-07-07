@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   namespace :admin do
     resources :organizations
+    resources :allies
     resources :projects
 
     root to: "organizations#index"
@@ -8,6 +9,7 @@ Rails.application.routes.draw do
 
   devise_for :users, skip: :registrations
   devise_for :organizations, skip: :sessions
+  devise_for :allies, skip: :sessions
 
   devise_scope :user do
     root to: "devise/sessions#new"
