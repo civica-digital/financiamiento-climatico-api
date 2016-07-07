@@ -10,7 +10,7 @@ describe 'Admin adds ally user' do
     click_link "Aliados"
     click_link "Nuevo Aliado"
     fill_ally_form_with(name: "My ally user", contact: "ally@mail.com")
-    click_button "Crear Aliado"
+    click_button "Guardar Aliado"
 
     expect(page).to have_content "My ally user"
     expect(page).to have_content "ally@mail.com"
@@ -26,7 +26,7 @@ describe 'Admin adds ally user' do
     click_link "Aliados"
     click_link "Nuevo Aliado"
     fill_ally_form_with(contact: "ally@mail.com")
-    click_button "Crear Aliado"
+    click_button "Guardar Aliado"
 
     expect(page).not_to have_content "El usuario Aliado ha sido creado con éxito."
     expect(page).to have_content "no puede estar en blanco"

@@ -47,7 +47,7 @@ module Admin
 
     def authorize_user
       unless @permissions && @permissions.can_manage_organizations?
-        redirect_to root_path
+        redirect_to admin_projects_path
       end
     end
 

@@ -32,11 +32,29 @@ module Admin
       }
     end
 
+    def create
+      @project = Project.new(project_params)
+      if @project.save
+        redirect_to admin_projects_path, notice: t("system_admin.messages.project.created")
+      else
+        render :new, locals: {
+          page: Administrate::Page::Form.new(dashboard, @project)
+        }
+      end
+    end
+
     def new
       @project = Projects.new_with_defaults(Project)
       render locals: {
         page: Administrate::Page::Form.new(dashboard, @project),
       }
+    end
+
+    private
+
+    def project_params
+      params.require(:project).permit(:area, :year, :name, :quantity, :currency, :financing, :region, :grant,
+        :source, :status, :observations, organization_ids: []).merge(owner_id: current_user.id)
     end
 
     def resources_for_user(resources)
