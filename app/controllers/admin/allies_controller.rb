@@ -1,5 +1,6 @@
 module Admin
   class AlliesController < Admin::ApplicationController
+    before_action :generate_token, only: :create
     # To customize the behavior of this controller,
     # simply overwrite any of the RESTful actions. For example:
     #
@@ -17,7 +18,11 @@ module Admin
     # for more information
     def create
       @ally = Ally.new(ally_params)
+      @ally.reset_password_token = @token_generator[:record]
+      @ally.reset_password_sent_at = Time.now
+
       if @ally.save
+        AccountsMailer.new_account_notification(@ally, @token_generator[:param]).deliver
         redirect_to admin_allies_path, notice: t("system_admin.messages.ally.created")
       else
         render :new, locals: {
@@ -27,6 +32,10 @@ module Admin
     end
 
     private
+
+    def generate_token
+      @token_generator ||= Accounts.generate_token_for_resource(Ally)
+    end
 
     def ally_params
       password = Devise.friendly_token.first(8)
