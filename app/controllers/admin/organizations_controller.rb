@@ -1,6 +1,7 @@
 module Admin
   class OrganizationsController < Admin::ApplicationController
     before_action :authorize_user
+    before_action :generate_token, only: :create
     # To customize the behavior of this controller,
     # simply overwrite any of the RESTful actions. For example:
     #
@@ -34,7 +35,11 @@ module Admin
 
     def create
       @organization = Organization.new(organization_params)
+      @organization.reset_password_token = @token_generator[:record]
+      @organization.reset_password_sent_at = Time.now
+
       if @organization.save
+        AccountsMailer.new_account_notification(@organization, @token_generator[:param]).deliver
         redirect_to admin_organizations_path, notice: t("system_admin.messages.organization.created")
       else
         render :new, locals: {
@@ -44,6 +49,10 @@ module Admin
     end
 
     private
+
+    def generate_token
+      @token_generator ||= Accounts.generate_token_for_resource(Organization)
+    end
 
     def authorize_user
       unless @permissions && @permissions.can_manage_organizations?

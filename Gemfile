@@ -27,6 +27,7 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
   gem 'spring'
+  gem "letter_opener"
 end
 
 group :test do

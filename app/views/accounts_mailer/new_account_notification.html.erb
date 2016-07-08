@@ -1,0 +1,9 @@
+<strong>Hola <%= @resource.name %>,</strong>
+
+<p>Se te ha creado una nueva cuenta en Financiamiento Climático. Para iniciar sesión es necesario que primero establezcas una contraseña ingresando a <%= link_to "esta liga", edit_user_password_url(@resource, reset_password_token: @token) %>.</p>
+
+
+<p>
+  Gracias,
+  <strong>Financiamiento Climático</strong>
+</p>
