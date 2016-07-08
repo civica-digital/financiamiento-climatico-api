@@ -12,12 +12,17 @@ es-MX:
         heading: "Panel Administrador"
         organizations: "Organizaciones"
         projects: "Proyectos"
+        allies: "Aliados"
         signout: "Cerrar sesión"
   system_admin:
     messages:
       unathorized_user: "Necesitas iniciar sesión como administrador."
       organization:
         created: "La organización ha sido creada con éxito."
+      ally:
+        created: "El usuario Aliado ha sido creado con éxito."
+      project:
+        created: "El proyecto ha sido creado con éxito."
   admin:
     organizations:
       index:
@@ -28,8 +33,14 @@ es-MX:
       new:
         new_organization: "Nueva organización"
         back: "Atrás"
+      edit:
+        edit_organization: "Editar organización #%{id}"
+        see_organization: "Ver organización"
+      show:
+        organization: "Organización #%{id}"
+        edit: "Editar"
       form:
-        create_organization: "Crear Organización"
+        create_organization: "Guardar Organización"
     projects:
       index:
         projects: "Proyectos"
@@ -39,13 +50,37 @@ es-MX:
       new:
         new_project: "Nuevo Proyecto"
         back: "Atrás"
+      edit:
+        edit_project: "Editar proyecto #%{id}"
+        see_project: "Ver proyecto"
+      show:
+        project: "Proyecto #%{id}"
+        edit: "Editar"
       form:
-        create_project: "Crear Proyecto"
+        create_project: "Guardar Proyecto"
+    allies:
+      index:
+        allies: "Aliados"
+        search_hint: "Presiona enter para buscar"
+        search: "Buscar"
+        new_ally: "Nuevo Aliado"
+      new:
+        new_ally: "Nuevo Aliado"
+        back: "Atrás"
+      form:
+        create_ally: "Guardar Aliado"
   helpers:
     label:
+      ally:
+        name: "Nombre"
+        email: "Contacto"
+        created_at: "Creado el"
+        updated_at: "Actualizado el"
       organization:
         name: "Nombre"
         email: "Contacto"
+        created_at: "Creada el"
+        updated_at: "Actualizada el"
       project:
         name: "Nombre"
         area: "Área"
@@ -59,3 +94,5 @@ es-MX:
         status: "Estatus"
         observations: "Observaciones"
         organizations: "Beneficiarios"
+        created_at: "Creado el"
+        updated_at: "Actualizado el"

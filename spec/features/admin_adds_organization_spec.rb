@@ -10,7 +10,7 @@ describe 'Admin adds organization' do
     click_link "Organizaciones"
     click_link "Nueva organización"
     fill_organization_form_with(name: "My organization", contact: "org@mail.com")
-    click_button "Crear Organización"
+    click_button "Guardar Organización"
 
     expect(page).to have_content "My organization"
     expect(page).to have_content "org@mail.com"
@@ -26,7 +26,7 @@ describe 'Admin adds organization' do
     click_link "Organizaciones"
     click_link "Nueva organización"
     fill_organization_form_with(contact: "org@mail.com")
-    click_button "Crear Organización"
+    click_button "Guardar Organización"
 
     expect(page).not_to have_content "La organización ha sido creada con éxito."
     expect(page).to have_content "no puede estar en blanco"
