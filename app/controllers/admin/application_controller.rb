@@ -2,6 +2,8 @@ module Admin
   class ApplicationController < Administrate::ApplicationController
     before_action :authenticate_admin
 
+    private
+
     def authenticate_admin
       unless current_user.present? && (current_user.system_admin || current_user.type == "Ally" || current_user.type == "Organization")
         redirect_to root_path, alert: I18n.t("system_admin.messages.unathorized_user")

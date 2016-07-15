@@ -1,4 +1,7 @@
 es-MX:
+  accounts_mailer:
+    new_account_notification:
+      subject: "Nueva cuenta en Financiamiento Climático"
   administrate:
     actions:
       edit: "Editar"

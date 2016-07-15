@@ -15,6 +15,7 @@ describe 'Admin adds ally user' do
     expect(page).to have_content "My ally user"
     expect(page).to have_content "ally@mail.com"
     expect(page).to have_content "El usuario Aliado ha sido creado con éxito."
+    expect_new_account_notification_sent_to "ally@mail.com"
   end
 
   scenario 'with invalid params' do
@@ -35,5 +36,10 @@ describe 'Admin adds ally user' do
   def fill_ally_form_with(attrs = {})
     fill_in "Nombre", with: attrs[:name]
     fill_in "Contacto", with: attrs[:contact]
+  end
+
+  def expect_new_account_notification_sent_to(email)
+    last_email = ActionMailer::Base.deliveries.last
+    expect(last_email.to).to include email
   end
 end
