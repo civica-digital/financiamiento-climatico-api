@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root to: "pages#landing"
   namespace :admin do
     resources :organizations
     resources :allies
@@ -11,7 +12,4 @@ Rails.application.routes.draw do
   devise_for :organizations, skip: :sessions
   devise_for :allies, skip: :sessions
 
-  devise_scope :user do
-    root to: "devise/sessions#new"
-  end
 end
